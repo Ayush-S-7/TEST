@@ -32,21 +32,22 @@ class _DropDownState extends State<DropDown> {
         itemCount: locationList.length,
         itemBuilder: (BuildContext context, int index) {
           return Card(
-            
             color: Colors.blue[colorCodes[index]],
-      child: ListTile(
-        onTap: () {
-          print(index);
-          Navigator.push(
-    context,
-    MaterialPageRoute(builder: (context) => ListShops(passedPlace: locationList[index],)),
-  );
-        },
-        leading: Icon(Icons.abc),
-        title: Text('${locationList[index]}'),
-      ),
-      
-    );
+            child: ListTile(
+              onTap: () {
+                print(index);
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                      builder: (context) => ListShops(
+                            passedPlace: locationList[index],
+                          )),
+                );
+              },
+              leading: Icon(Icons.abc),
+              title: Text('${locationList[index]}'),
+            ),
+          );
         },
         separatorBuilder: (BuildContext context, int index) => const Divider(),
       ),
