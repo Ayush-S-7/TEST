@@ -1,21 +1,19 @@
 import 'package:flutter/material.dart';
 import 'main.dart';
 
-
 class SignupPage extends StatefulWidget {
   @override
   _SignupPageState createState() => _SignupPageState();
 }
 
-class _SignupPageState extends State<SignupPage> { 
-
+class _SignupPageState extends State<SignupPage> {
   TextEditingController nameTextEditingController = TextEditingController();
   TextEditingController phoneTextEditingController = TextEditingController();
   TextEditingController passwordTextEditingController = TextEditingController();
 
-   late String name;
-   late int mobileNumber;
-   late String password;
+  late String name;
+  late int mobileNumber;
+  late String password;
   Widget _buildLogo() {
     return Row(
       mainAxisAlignment: MainAxisAlignment.center,
@@ -35,7 +33,7 @@ class _SignupPageState extends State<SignupPage> {
     );
   }
 
-    Widget _buildNameRow() {
+  Widget _buildNameRow() {
     return Padding(
       padding: const EdgeInsets.all(8),
       child: TextFormField(
@@ -43,7 +41,7 @@ class _SignupPageState extends State<SignupPage> {
         keyboardType: TextInputType.name,
         onChanged: (value) {
           setState(() {
-            name = value;            
+            name = value;
           });
         },
         decoration: InputDecoration(
@@ -64,7 +62,7 @@ class _SignupPageState extends State<SignupPage> {
         keyboardType: TextInputType.number,
         onChanged: (value) {
           setState(() {
-            mobileNumber = value as int;            
+            mobileNumber = value as int;
           });
         },
         decoration: InputDecoration(
@@ -101,7 +99,7 @@ class _SignupPageState extends State<SignupPage> {
   }
 
   // Widget _buildForgetPasswordButton() {
-  //   return Row(    
+  //   return Row(
   //   mainAxisAlignment: MainAxisAlignment.end,
   //   crossAxisAlignment: CrossAxisAlignment.end,
   //     children: <Widget>[
@@ -112,7 +110,7 @@ class _SignupPageState extends State<SignupPage> {
   //       ),
   //     ],
   //   );
-    
+
   // }
 
   Widget _buildLoginButton() {
@@ -143,7 +141,6 @@ class _SignupPageState extends State<SignupPage> {
       ],
     );
   }
-
 
   Widget _buildContainer() {
     return Row(
@@ -176,7 +173,7 @@ class _SignupPageState extends State<SignupPage> {
                 ),
                 _buildNameRow(),
                 _buildMobileNumberRow(),
-                _buildPasswordRow(),                
+                _buildPasswordRow(),
                 _buildLoginButton(),
                 // _buildOrRow(),
                 // _buildSocialBtnRow(),
@@ -197,9 +194,9 @@ class _SignupPageState extends State<SignupPage> {
           child: FlatButton(
             onPressed: () {
               Navigator.push(
-    context,
-    MaterialPageRoute(builder: (context) => LoginPage()),
-  );
+                context,
+                MaterialPageRoute(builder: (context) => LoginPage()),
+              );
             },
             child: RichText(
               text: TextSpan(children: [

@@ -137,7 +137,7 @@ class _LoginPageState extends State<LoginPage> {
     );
   }
 
-   _snackbar(message) async {
+  _snackbar(message) async {
     ScaffoldMessenger.of(context).showSnackBar(
       SnackBar(
         content: Text('$message'),
@@ -188,7 +188,6 @@ class _LoginPageState extends State<LoginPage> {
       ],
     );
   }
-
 
   Widget _buildContainer() {
     return Row(
